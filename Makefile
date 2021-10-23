@@ -10,5 +10,11 @@ format:
 
 lint:
 	pylint --disable=R,C main.py
+	
+build:
+	docker build -t flask-gan:latest .
+
+run:
+	docker run -p 8080:8080 flask-gan
 
 all: install lint test
